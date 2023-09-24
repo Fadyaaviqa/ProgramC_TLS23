@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main () {
+    //List Kegiatan 
+    vector < string > listkegiatan;
+    // vector untuk menyimpan kegiatan
+    
+    while (true) {
+        cout << "Menu:" << endl;
+        cout << "1. Tambah kegiatan" << endl;
+        cout << "2. Tampilkan list kegiatan" << endl;
+        cout << "3. Keluar" << endl;
+        
+        int Menu;
+        cout << "Silahkan memilih";
+        cin >> Menu;
+        
+        if (Menu == 1) {
+            string kegiatan;
+            cout << "Masukkan deskripsi kegiatan";
+            cin.ignore();
+            //menghapus line baru dari input sebelumnya
+            getline (cin, kegiatan);
+            listkegiatan.push_back (kegiatan);
+            cout << "kegiatan tersimpan." << endl;
+            
+            } else if (Menu == 2) {
+                cout << "list kegiatan:" << endl;
+                for (size_t i = 0; i < listkegiatan.size(); ++i) {
+                    cout << i + 1 << "." << listkegiatan [i] << endl;
+                    }
+                }else if (Menu == 3) {
+                break; 
+                //keluar dari program
+            } else {
+                cout << "Menu invalid. Masukkan Menu yang valid." << endl;
+            }
+        }
+        
+        return 0;
+    }
+    
